@@ -1,0 +1,21 @@
+body {
+  margin: 20px;
+}
+
+:modal::backdrop{
+  backgroup-color:{0,0,0,0.5};
+}
+
+modalCssxx{
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(205,92,92);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }

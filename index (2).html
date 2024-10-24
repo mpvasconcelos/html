@@ -1,0 +1,138 @@
+<!-- 
+Online HTML, CSS and JavaScript editor to run code online.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Browser</title>
+  <style>
+  
+  .modalCss{
+          /*
+            display: none;
+            */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 50%;
+            height: 50%;
+            overflow: auto;
+            background-color: rgb(205,92,92);
+/*
+            background-color: rgba(0,0,0,0.4);
+            */
+            
+            padding-top: 60px;
+        }
+  .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+        
+  .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }      
+        
+    .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+  
+  </style>
+  
+</head>
+
+<body>
+  <h1>
+    Probando Modal
+  </h1>
+  <button onclick="openModal()"> Llamar Modal </button>
+  <button onclick="openModalAsesorias()"> Asesorias </button>
+  <button onclick="openNuevoTiq()"> Nuevo Tiquet </button>
+  <button onclick="abreModal(dlgModalTiquetView)"> Mostrar Tiquets </button>
+  <button onclick="abreModal(dlgModalTiquetReport)"> Modulo de reportes Tiquets </button>
+ 
+ 
+  <dialog class="modal" id="mainModal">
+       
+          <h1> 
+            Cada conversación era una mezcla de recuerdos pasados y sueños futuros, tejiendo un tapiz de momentos inolvidables que quedarán grabados en sus corazones para siempre.
+          </h1>
+           <p> hola</p>
+       
+         <button onclick="closeModal()"> Cerrar Modal </button> 
+  </dialog>
+
+<dialog class="modalAsesorias" id="dlgModalAsesorias">
+       
+          <h1> 
+              esto es un tema de asesorias
+          </h1>
+           <p> hola</p>
+          <!--          
+         <button onclick="closeModalAsesoria(dlgModalAsesorias)"> Cerrar Modal </button> 
+         -->
+         <button onclick="closeModalAsesoria(dlgModalAsesorias)"> Cerrar Modal </button> 
+  </dialog>
+
+<dialog class="modalTiquet" id="dlgModalTiquet">
+       
+          <h1> 
+             En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor. Una olla de algo más vaca que carnero, salpicón las más noches, duelos y quebrantos los sábados, lentejas los viernes, algún palomino de añadidura los domingos, consumían las tres partes de su hacienda. El resto della concluían sayo de velarte, calzas de velludo para las fiestas, con sus pantuflos de lo mesmo, y los días de entresemana se honraba con su vellorí de lo más fino
+          </h1>
+           <p> hola</p>
+          <!--          
+         <button onclick="closeModalAsesoria(dlgModalAsesorias)"> Cerrar Modal </button> 
+         -->
+         <button onclick="closeModalGenerico(dlgModalTiquet)"> Cerrar Modal Tiquet</button> 
+  </dialog>
+
+
+<dialog class="" id="dlgModalTiquetView">
+       
+          <h1> 
+              mostrar modal con una funcion
+          </h1>
+           <p> hola</p>
+          
+         <button onclick="closeModalGenerico(dlgModalTiquetView)"> Cerrar Modal Tiquet</button> 
+  </dialog>
+
+
+<dialog class="modalCss"  id="dlgModalTiquetReport" >
+         <div class="modal-content">
+           
+        
+          <h1> 
+              Modulo de reportes
+              <span class="close" onclick="closeModalGenerico(dlgModalTiquetReport)">&times;</span>
+            
+          </h1>
+           <p> hola</p>
+          
+         <button class= onclick="closeModalGenerico(dlgModalTiquetReport)"> Cerrar Modal Tiquet</button> 
+          </div>
+         
+  </dialog>
+
+
+
+    
+  <script src="script.js"></script>
+</body>
+
+</html>
