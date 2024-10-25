@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mi página </title>
+  
+  <script>
+        apell=["Perez","Juarez","Lopez","Ramirez","Vasconcelos","Gonzalez","Narvaez","Ramon","Caceres","Rios","Chable","Benitez","Candelero","Damian","Castillo","Leon","De la o","Dominguez", "Gomez","Diaz","Torres", "Hernandez"]
+    
+     function fnApellidos(){
+       return apell;
+      }
+    
+    
+    
+     function verApellidos(qD){
+       apellRowTbl("cuerpo");
+       qD.style.display = "block";
+  qD.showModal();
+  
+}
+
+    
+ function apellRowTbl(tbl){
+  var listaAp=fnApellidos();  
+  var rowStr="";
+  var x="";
+   
+  listaAp.forEach(function(elemento) {
+      rowStr=" <tr> <td> " + elemento + " </td> </tr>";
+      x=document.getElementById(tbl).innerHTML;
+     document.getElementById(tbl).innerHTML= document.getElementById(tbl).innerHTML+ rowStr;
+       
+}); 
+  
+    
+    
+     
+   return  "";
+  
+}
+
+
+function defineTbl(){  
+  return "<table border='1'> <thead> <tr> <th>Nombre</th> </tr> </thead> <tbody> ";
+}
+function closeTbl(){  
+  return " </tbody>  </table> <script type="text/javascript" src="js/script.js"></script>
+</body> </html>";
+}
+
+    
+    
+    
+    
+    
+    
+    
+  </script>
+  
+<link type="text/css" rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<!-- Inicio del código -->
+
+<p class="grande">Generar Script Sql</p>
+<button onclick="verNombres(dlgNombres)"> Nombres</button>
+<button onclick="verApellidos(dlgApellidos)"> Apellidos</button>
+  
+
+  
+  
+  
+  <dialog class="modal" id="dlgNombres">
+    <h1> Lista de nombres </h1>
+     
+       <!--
+       <input name="nombre"  id="nombre" type="text" value=""> 
+        -->
+        <div>
+           <table border="1" id="tblNombres">
+        <thead>
+            <tr>
+                <th>Apellidos</th>
+                
+            </tr>
+        </thead>
+             
+             
+        <tbody id="cuerpoTblNombre">
+          
+        </tbody>
+          </table>   
+          
+        </div>
+   <button onclick="cerrarDlg(dlgNombres)"> Cerrar</button>
+  
+</dialog>
+  
+  
+ <dialog class="modal" id="dlgApellidos" > 
+   
+        <h1> Lista de apellidos </h1>
+      
+   
+   <div>
+      <table border="1" id="tblApellidos">
+        <thead>
+            <tr>
+                <th>Apellidos</th>
+                
+            </tr>
+        </thead>
+        <tbody id="cuerpo">
+          
+        </tbody>
+         
+         </table>       
+           
+       </div>  
+        <button onclick="cerrarDlg(dlgApellidos)"> cerrar </button>
+     
+ </dialog>
+  
+        
+<script src="script.js"></script>
+<!-- Fin del código -->
+</body>
+</html>
