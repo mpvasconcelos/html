@@ -2,12 +2,14 @@
 
 function nombres(){
   
-  return ["Maria","Luis","Luisa","Alicia","Jose","Hali","Bernardo","Salomon","Benito","Sofia","Armando","Andres","Lucia","Carmen","Isabel","Rafael","Rafaela","Nancy","Juan","Miguel","Jazmin","Zaida","Roman","Romana","Jose","Rubicel","Milagro","Claudia","Norma","Felipe","Felipa","Casimiro","Jhonatan","Joel","Francisca","Cristell","Khali"];
+  return ["Maria","Luis","Luisa","Alicia","Jose"];
+ /* ["Maria","Luis","Luisa","Alicia","Jose","Hali","Bernardo","Salomon","Benito","Sofia","Armando","Andres","Lucia","Carmen","Isabel","Rafael","Rafaela","Nancy","Juan","Miguel","Jazmin","Zaida","Roman","Romana","Jose","Rubicel","Milagro","Claudia","Norma","Felipe","Felipa","Casimiro","Jhonatan","Joel","Francisca","Cristell","Khali"];
+ */
 }
 
 function nombresRowTbl(tbl){
   var listaN=nombres();  
-  var rowStr=defineTbl();
+  //var rowStr=defineTbl();
   
   document.getElementById(tbl).innerHTML="";
   
@@ -19,13 +21,7 @@ function nombresRowTbl(tbl){
    
 }); 
    
-  //document.getElementById(tbl).innerHTML= document.getElementById(tbl).innerHTML+ closeTbl();
   
-    // alert(document.getElementById(tbl).innerHTML);
-     
-     // rowStr=rowStr+closeTbl();
-   return  "";
-  //alert(rowStr);
 }
 
 
@@ -35,10 +31,6 @@ function defineTbl(){
 function closeTbl(){  
   return " </tbody>  </table> </body> </html>";
 }
-
-
-
-
 
 
 function verNombres(qD){
@@ -54,6 +46,36 @@ function cerrarDlg(qD){
   qD.close();
   
 }
+
+/*  dialogo  */
+
+function generaRowTbl(tbl){
+  var listaN=nombres();  
+  var listaAp=fnApellidos();
+  
+  document.getElementById(tbl).innerHTML="";
+  
+  
+  listaN.forEach(function(elemento) {
+      listaAp.forEach(function(elementoApPat){
+      listaAp.forEach(function(elementoApMat){
+          rowStr=" <tr> <td> insert into empleados(id,ap, am, nombre) values(0,'" + elementoApPat +"',''"+elementoApMat +"','"+  elemento+"'); </td> </tr>";      
+          document.getElementById(tbl).innerHTML= document.getElementById(tbl).innerHTML+ rowStr;
+          rowStr="";});
+});
+    });
+    
+
+}
+
+function verDatos(qD){
+ generaRowTbl("tblVerDatos");
+  qD.style.display = "block";
+ // qD.style.display="refresh";
+  qD.showModal();
+  
+}
+
 
 
 

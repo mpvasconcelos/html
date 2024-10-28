@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Mi página </title>
+<title>Script SQL: Por Miguel Perez Vasconcelos </title>
+  
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   
   <script>
-        apell=["Perez","Juarez","Lopez","Ramirez","Vasconcelos","Gonzalez","Narvaez","Ramon","Caceres","Rios","Chable","Benitez","Candelero","Damian","Castillo","Leon","De la o","Dominguez", "Gomez","Diaz","Torres", "Hernandez"]
-    
+     apell=["Perez","Juarez","Lopez","Ramirez","Vasconcelos","Gonzalez"]
+    /*    
+    apell=["Perez","Juarez","Lopez","Ramirez","Vasconcelos","Gonzalez","Narvaez","Ramon","Caceres","Rios","Chable","Benitez","Candelero","Damian","Castillo","Leon","De la o","Dominguez", "Gomez","Diaz","Torres", "Hernandez"]
+    */
      function fnApellidos(){
-       return apell;
+       return ["Perez","Juarez","Lopez","Ramirez","Vasconcelos","Gonzalez"];
       }
     
     
@@ -47,15 +51,7 @@ function closeTbl(){
   return " </tbody>  </table> <script type="text/javascript" src="js/script.js"></script>
 </body> </html>";
 }
-
-    
-    
-    
-    
-    
-    
-    
-  </script>
+</script>
   
 <link type="text/css" rel="stylesheet" href="css/style.css"/>
 </head>
@@ -63,25 +59,20 @@ function closeTbl(){
 <!-- Inicio del código -->
 
 <p class="grande">Generar Script Sql</p>
-<button onclick="verNombres(dlgNombres)"> Nombres</button>
-<button onclick="verApellidos(dlgApellidos)"> Apellidos</button>
+<button type="submit" class="btn btn-primary" onclick="verNombres(dlgNombres)"> Nombres</button>
+<button type="submit" class="btn btn-primary" onclick="verApellidos(dlgApellidos)"> Apellidos</button>
+<button type="submit" class="btn btn-primary" onclick="verDatos(dlgVerDatos)"> Combinar</button>
   
 
   
   
-  
   <dialog class="modal" id="dlgNombres">
     <h1> Lista de nombres </h1>
-     
-       <!--
-       <input name="nombre"  id="nombre" type="text" value=""> 
-        -->
         <div>
-           <table border="1" id="tblNombres">
+           <table class=".table" border="1" id="tblNombres">
         <thead>
             <tr>
-                <th>Apellidos</th>
-                
+                <th>Nombres</th>                
             </tr>
         </thead>
              
@@ -92,7 +83,8 @@ function closeTbl(){
           </table>   
           
         </div>
-   <button onclick="cerrarDlg(dlgNombres)"> Cerrar</button>
+    <br>
+   <button class="btn btn-outline-warning" onclick="cerrarDlg(dlgNombres)"> Cerrar</button>
   
 </dialog>
   
@@ -100,7 +92,6 @@ function closeTbl(){
  <dialog class="modal" id="dlgApellidos" > 
    
         <h1> Lista de apellidos </h1>
-      
    
    <div>
       <table border="1" id="tblApellidos">
@@ -117,12 +108,42 @@ function closeTbl(){
          </table>       
            
        </div>  
-        <button onclick="cerrarDlg(dlgApellidos)"> cerrar </button>
+      <br>
+        <button class="btn btn-outline-warning"  onclick="cerrarDlg(dlgApellidos)"> cerrar </button>
      
  </dialog>
   
+ <dialog class="modal" id="dlgVerDatos" > 
+   
+        <h3 style="color:#faf6f6"> Nombres generados </h3>
+   
+   <div>
+      <table border="1" id="tblVerDatos">
+        <thead>
+            <tr>
+                <th>Apellidos</th>
+                
+            </tr>
+        </thead>
+        <tbody >
+          
+        </tbody>
+         
+         </table>       
+           
+       </div>  
+       <br>
+        <button class="btn btn-outline-warning" onclick="cerrarDlg(dlgVerDatos)"> cerrar </button>
+     
+ </dialog>
+  
+  
+  
+  
+  
         
-<script src="script.js"></script>
+<script src="script.js"></script>  
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <!-- Fin del código -->
 </body>
 </html>
